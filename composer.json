@@ -3,6 +3,8 @@
     "description": "Library",
     "type": "library",
     "version": "0.0.1",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "authors": [
         {
             "name": "Volodymyr Tytarenko",
