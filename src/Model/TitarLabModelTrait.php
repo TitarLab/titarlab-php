@@ -6,10 +6,10 @@ namespace TitarLab\Model;
 
 trait TitarLabModelTrait
 {
-    public function showList($array){
+    public static function showList($array){
         $list = [];
         foreach ($array as $item){
-            $list[] = $this->show($item);
+            $list[] = self::show($item);
         }
         return $list;
     }
