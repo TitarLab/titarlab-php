@@ -4,16 +4,13 @@
 namespace TitarLab\Model;
 
 
-trait TitarLabModel
+trait TitarLabModelTrait
 {
-    abstract protected function show($item);
-
-    protected function showList($array){
+    public function showList($array){
         $list = [];
         foreach ($array as $item){
             $list[] = $this->show($item);
         }
         return $list;
     }
-
 }
