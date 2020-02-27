@@ -1,0 +1,20 @@
+{
+    "name": "titarlab/titarlab-php",
+    "description": "Library",
+    "type": "library",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Volodymyr Tytarenko",
+            "email": "bovatitar@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "TitarLab\\": "src/"
+        }
+    }
+}
