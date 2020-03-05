@@ -6,6 +6,8 @@ namespace TitarLab\Model;
 
 trait TitarLabModelTrait
 {
+    public $propertys = array();
+
     public static function showList($array){
         $list = [];
         foreach ($array as $item){
@@ -14,7 +16,9 @@ trait TitarLabModelTrait
         return $list;
     }
 
-    public $propertys = array();
+    public static function show($array){
+        return self::createFromPropertys();
+    }
 
     public function createFromPropertys(){
         $object = new \stdClass();
