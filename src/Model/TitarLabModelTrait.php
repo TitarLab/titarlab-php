@@ -13,4 +13,14 @@ trait TitarLabModelTrait
         }
         return $list;
     }
+
+    public $propertys = array();
+
+    public function createFromPropertys(){
+        $object = new \stdClass();
+        foreach ($this->propertys as $property){
+            $object->{$property} = $this->{$property};
+        }
+        return $object;
+    }
 }
