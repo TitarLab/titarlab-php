@@ -6,8 +6,6 @@ namespace TitarLab\Model;
 
 trait TitarLabModelTrait
 {
-    public $propertys = array();
-
     public static function showList($array){
         $list = [];
         foreach ($array as $item){
