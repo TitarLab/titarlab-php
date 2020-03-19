@@ -26,7 +26,7 @@ class Server
         return sprintf('%1.2f' , $bytes / pow($base,$class)) . ' ' . $si_prefix[$class];
     }
     public function getUsedSpace($direction){
-        $bytes = folderSize($direction);
+        $bytes = $this->folderSize($direction);
         $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
         $base = 1024;
         $class = min((int)log($bytes , $base) , count($si_prefix) - 1);
