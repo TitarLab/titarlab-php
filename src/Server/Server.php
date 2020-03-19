@@ -11,22 +11,31 @@ class Server
         return response()->json(new Report("200",$cronList,"Задачи в crontab"));
     }
 
-    public function getTotalSpace($direction){
+    public function getTotalSpace($direction, $inByte = false){
         $bytes = disk_total_space($direction);
+        if($inByte == true){
+            return $bytes;
+        }
         $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
         $base = 1024;
         $class = min((int)log($bytes , $base) , count($si_prefix) - 1);
         return sprintf('%1.2f' , $bytes / pow($base,$class)) . ' ' . $si_prefix[$class];
     }
-    public function getFreeSpace($direction){
+    public function getFreeSpace($direction, $inByte = false){
         $bytes = disk_free_space($direction);
+        if($inByte == true){
+            return $bytes;
+        }
         $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
         $base = 1024;
         $class = min((int)log($bytes , $base) , count($si_prefix) - 1);
         return sprintf('%1.2f' , $bytes / pow($base,$class)) . ' ' . $si_prefix[$class];
     }
-    public function getUsedSpace($direction){
+    public function getUsedSpace($direction, $inByte = false){
         $bytes = $this->folderSize($direction);
+        if($inByte == true){
+            return $bytes;
+        }
         $si_prefix = array( 'B', 'KB', 'MB', 'GB', 'TB', 'EB', 'ZB', 'YB' );
         $base = 1024;
         $class = min((int)log($bytes , $base) , count($si_prefix) - 1);
